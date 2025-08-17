@@ -42,7 +42,10 @@
     }
   </script>
   <style>
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
     .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(.4,0,.2,1); }
     .fade-in.visible { opacity: 1; transform: none; }
     .glow:hover { box-shadow: 0 0 0 4px #06b6d4, 0 0 16px #06b6d4; }
@@ -66,7 +69,7 @@
   </style>
 </head>
 
-<body class="bg-primary text-gray-100 font-inter dark:bg-white dark:text-primary transition-colors duration-300">
+<body class="bg-primary text-gray-100 font-inter dark:bg-white dark:text-primary transition-colors duration-300 overflow-x-hidden">
   <!-- Header -->
   <header class="sticky top-0 z-50 bg-primary/90 dark:bg-white/90 backdrop-blur shadow-md">
     <div class="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
@@ -452,23 +455,23 @@
         <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Mes services</h2>
         <p class="text-lg text-gray-300 dark:text-gray-700">Développement web sur-mesure, automatisation, analyse de données, accompagnement digital et formation technique.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="card-gradient rounded-2xl p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+        <div class="card-gradient rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
           <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:web"></span>
           <h3 class="font-semibold text-xl mb-2">Développement Web & API</h3>
           <p class="text-gray-300 dark:text-gray-700">Applications web robustes, performantes et évolutives. Développement d'APIs RESTful, intégration de services tiers et optimisation des performances.</p>
         </div>
-        <div class="card-gradient rounded-2xl p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
+        <div class="card-gradient rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
           <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:chart-line"></span>
           <h3 class="font-semibold text-xl mb-2">Data Science & Automatisation</h3>
           <p class="text-gray-300 dark:text-gray-700">Analyse de données, machine learning, automatisation de processus et reporting avancé. Solutions d'intelligence artificielle sur mesure.</p>
         </div>
-        <div class="card-gradient rounded-2xl p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
+        <div class="card-gradient rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
           <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:account-cog"></span>
           <h3 class="font-semibold text-xl mb-2">Gestion de projet digital</h3>
           <p class="text-gray-300 dark:text-gray-700">Accompagnement de A à Z, méthodes agiles, architecture technique, documentation et suivi qualité. Gestion d'équipes techniques.</p>
         </div>
-        <div class="card-gradient rounded-2xl p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
+        <div class="card-gradient rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
           <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:teach"></span>
           <h3 class="font-semibold text-xl mb-2">Formation & Coaching</h3>
           <p class="text-gray-300 dark:text-gray-700">Montée en compétences sur Laravel, Livewire, Python, bonnes pratiques web et data science. Formation d'équipes techniques.</p>
@@ -647,7 +650,7 @@
         <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Projets récents</h2>
         <p class="text-lg text-gray-300 dark:text-gray-700">Quelques réalisations marquantes en développement web et data science.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
         <!-- SDPlanner -->
         <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
           <div class="p-6 flex flex-col flex-1">
@@ -940,38 +943,38 @@
   </footer>
 
   <!-- Modale détails DocSecure -->
-  <div id="docsecure-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
-    <div class="min-h-screen flex items-center justify-center p-4">
-      <div class="bg-primary dark:bg-white rounded-2xl max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-4 sm:p-6 md:p-8">
+  <div id="docsecure-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden overflow-y-auto" onclick="closeDocSecureModal()">
+    <div class="min-h-screen flex items-center justify-center p-1 sm:p-4">
+      <div class="bg-primary dark:bg-white rounded-2xl w-[98vw] max-w-[98vw] sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl my-2 max-h-[95vh] overflow-y-auto overflow-x-hidden" onclick="event.stopPropagation()">
+        <div class="p-1 sm:p-4 md:p-6 lg:p-8">
           <!-- Header -->
-          <div class="flex justify-between items-start mb-6">
-            <div>
-              <h2 class="text-2xl font-bold text-accent dark:text-violet mb-2">DocSecure - Plateforme de Génération & Vérification de Documents</h2>
-              <p class="text-gray-300 dark:text-gray-700">Solution moderne adaptée aux administrations, universités, banques et institutions africaines</p>
+          <div class="flex justify-between items-start mb-4 sm:mb-6">
+            <div class="flex-1 pr-4">
+              <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-accent dark:text-violet mb-2">DocSecure - Plateforme de Génération & Vérification de Documents</h2>
+              <p class="text-sm sm:text-base text-gray-300 dark:text-gray-700">Solution moderne adaptée aux administrations, universités, banques et institutions africaines</p>
             </div>
-            <button onclick="closeDocSecureModal()" class="text-2xl text-gray-400 hover:text-white dark:hover:text-primary transition">
+            <button onclick="closeDocSecureModal()" class="text-xl sm:text-2xl text-gray-400 hover:text-white dark:hover:text-primary transition flex-shrink-0">
               ✕
             </button>
           </div>
 
           <!-- Présentation -->
-          <div class="mb-8">
-            <h3 class="text-xl font-semibold text-accent dark:text-violet mb-4">🎯 Présentation</h3>
-            <p class="text-gray-300 dark:text-gray-700 mb-4">
+          <div class="mb-6 sm:mb-8">
+            <h3 class="text-base sm:text-lg md:text-xl font-semibold text-accent dark:text-violet mb-3 sm:mb-4">🎯 Présentation</h3>
+            <p class="text-sm sm:text-base text-gray-300 dark:text-gray-700 mb-4 leading-relaxed">
               DocSecure est une plateforme moderne de génération, de gestion et de vérification de documents personnalisés, adaptée aux administrations, universités, banques et autres institutions en Afrique. Contrairement aux solutions lourdes comme Alfresco, DocSecure privilégie la simplicité, la rapidité et l'intégration directe des usages métier locaux, notamment via la génération depuis Excel ou Word avec vérification en ligne par QR code.
             </p>
           </div>
 
           <!-- Fonctionnalités principales -->
-          <div class="mb-8">
-            <h3 class="text-xl font-semibold text-accent dark:text-violet mb-4">🚀 Fonctionnalités principales</h3>
+          <div class="mb-6 sm:mb-8">
+            <h3 class="text-base sm:text-lg md:text-xl font-semibold text-accent dark:text-violet mb-3 sm:mb-4">🚀 Fonctionnalités principales</h3>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 gap-4 sm:gap-6">
               <!-- Gestion Documentaire -->
-              <div class="card-gradient rounded-xl p-6">
-                <h4 class="font-semibold text-lg text-accent dark:text-violet mb-3">📄 Gestion Documentaire</h4>
-                <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-2">
+              <div class="card-gradient rounded-xl p-3 sm:p-4 md:p-6">
+                <h4 class="font-semibold text-sm sm:text-base md:text-lg text-accent dark:text-violet mb-2 sm:mb-3">📄 Gestion Documentaire</h4>
+                <ul class="list-disc list-inside text-xs sm:text-sm md:text-base text-gray-300 dark:text-gray-700 space-y-1 sm:space-y-2">
                   <li>Génération individuelle de documents personnalisés</li>
                   <li>Génération en lot à partir de fichiers Excel</li>
                   <li>Templates personnalisables avec variables dynamiques</li>
@@ -1153,9 +1156,9 @@
 
   <!-- Modale détails automatisation n8n -->
   <div id="automation-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
-    <div class="min-h-screen flex items-center justify-center p-4">
-      <div class="bg-primary dark:bg-white rounded-2xl max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-4 sm:p-6 md:p-8">
+    <div class="min-h-screen flex items-center justify-center p-1 sm:p-4">
+      <div class="bg-primary dark:bg-white rounded-2xl w-[98vw] max-w-[98vw] sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl my-2 max-h-[95vh] overflow-y-auto overflow-x-hidden">
+        <div class="p-1 sm:p-4 md:p-6 lg:p-8">
           <!-- Header -->
           <div class="flex justify-between items-start mb-6">
             <div>
@@ -1290,9 +1293,9 @@
 
   <!-- Modale détails Dafani/BabaliTrac -->
   <div id="dafani-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
-    <div class="min-h-screen flex items-center justify-center p-4">
-      <div class="bg-primary dark:bg-white rounded-2xl max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-4 sm:p-6 md:p-8">
+    <div class="min-h-screen flex items-center justify-center p-1 sm:p-4">
+      <div class="bg-primary dark:bg-white rounded-2xl w-[98vw] max-w-[98vw] sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl my-2 max-h-[95vh] overflow-y-auto overflow-x-hidden">
+        <div class="p-1 sm:p-4 md:p-6 lg:p-8">
           <!-- Header -->
           <div class="flex justify-between items-start mb-6">
             <div>
@@ -1466,9 +1469,9 @@
 
   <!-- Modale détails VaxBudget -->
   <div id="vaxbudget-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
-    <div class="min-h-screen flex items-center justify-center p-4">
-      <div class="bg-primary dark:bg-white rounded-2xl max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-4 sm:p-6 md:p-8">
+    <div class="min-h-screen flex items-center justify-center p-1 sm:p-4">
+      <div class="bg-primary dark:bg-white rounded-2xl w-[98vw] max-w-[98vw] sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl my-2 max-h-[95vh] overflow-y-auto overflow-x-hidden">
+        <div class="p-1 sm:p-4 md:p-6 lg:p-8">
           <!-- Header -->
           <div class="flex justify-between items-start mb-6">
             <div>
@@ -1655,9 +1658,9 @@
 
   <!-- Modale détails SDPlanner -->
   <div id="sdplanner-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
-    <div class="min-h-screen flex items-center justify-center p-4">
-      <div class="bg-primary dark:bg-white rounded-2xl max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-4 sm:p-6 md:p-8">
+    <div class="min-h-screen flex items-center justify-center p-1 sm:p-4">
+      <div class="bg-primary dark:bg-white rounded-2xl w-[98vw] max-w-[98vw] sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl my-2 max-h-[95vh] overflow-y-auto overflow-x-hidden">
+        <div class="p-1 sm:p-4 md:p-6 lg:p-8">
           <!-- Header -->
           <div class="flex justify-between items-start mb-6">
             <div>
@@ -1843,9 +1846,9 @@
 
   <!-- Modale détails Collecte Santé SurveyJS -->
   <div id="collecte-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
-    <div class="min-h-screen flex items-center justify-center p-4">
-      <div class="bg-primary dark:bg-white rounded-2xl max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-        <div class="p-4 sm:p-6 md:p-8">
+    <div class="min-h-screen flex items-center justify-center p-1 sm:p-4">
+      <div class="bg-primary dark:bg-white rounded-2xl w-[98vw] max-w-[98vw] sm:max-w-md md:max-w-2xl lg:max-w-4xl xl:max-w-6xl my-2 max-h-[95vh] overflow-y-auto overflow-x-hidden">
+        <div class="p-1 sm:p-4 md:p-6 lg:p-8">
           <!-- Header -->
           <div class="flex justify-between items-start mb-6">
             <div>
