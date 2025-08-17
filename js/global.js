@@ -1,148 +1,76 @@
-/* ceci est un commentaire js */
-// console.log('toto');
+/* Portfolio JavaScript - Fonctionnalités modernes */
 
-// string 
-
-let myVar = "ma variable";
-myVar = "variable changée";
-
-const myVar2 = "ma variable 2";
-
-// console.log(myVar);
-
-// boolean
-let isTrue = true;
-let isFalse = false;
-
-// console.log(isFalse);
-
-// chiffres et opérateurs
-
-let chiffre1 = 4;
-let chiffre2 = 3;
-
-// console.log(typeof chiffre1, typeof chiffre2);
-
-// template string, littéraux de gabarits et concat
-
-let test = 'test ' + myVar + 'value';
-let test2 = `test ${myVar} dzqdqzd `;
-
-// console.log(test2);
-/*
-if (chiffre1 <= 3) {
-  console.log('condition est valide');
-} else if (chiffre1 <= 4) {
-  console.log('je passe la');
-} else {
-  console.log('condition pas valide')
-}
-*/
-
-// tableaux 
-
-let array = ['item 1', 'item 2', 'item 3', 'item 4'];
-// console.log(array[3]);
-
-// objets
-
-let obj = {
-  title: 'Mon titre',
-  description: 'Ma description'
+// Mode sombre
+function initDarkMode() {
+  const darkModeToggle = document.querySelector('.dark-mode-toggle');
+  const body = document.body;
+  
+  // Vérifier la préférence utilisateur
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const savedTheme = localStorage.getItem('theme');
+  
+  if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    body.classList.add('dark');
+  }
+  
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  }
 }
 
-// console.log(obj.title, obj.description);
-
-// les boucles, while, for, foreach
-/*
-for (let i = 0; i < array.length; i++) {
-  console.log(array[i]);
-}
-
-array.forEach(item => {
-  console.log(item);
-})
-
-*/
-
-// fonctions 
-
-/*function myFunction(item, item2) {
-  console.log(item, item2);
-}*/
-
-const myFunction = (item, item2) => {
-  // console.log(item, item2);
-}
-
-myFunction('toto', 5);
-myFunction('tata', 6);
-
-const calcul = (nb1, nb2) => {
-  return nb1 + nb1;
-}
-
-let result = calcul(4, 5);
-// console.log(result);
-
-// interagir avec le dom // methode, propriete, evement
-
-// selectors
-// let header = document.querySelector('.header');
-// console.log(header);
-
-// let grids = document.querySelectorAll('.grid');
-/*
-grids.forEach(grid => {
-  grid.classList.add('titi');
-  console.log(grid)
-});
-*/
-// evenements les plus courants
-/*
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM entièrement chargé et analysé");
-});
-
-header.addEventListener('click', (e) => {
-  console.log(e);
-});
-
-header.addEventListener('mouseenter', (e) => {
-  console.log('souris entre');
-});*/
-
-// insertion dom et navigation dans le dom
-
-let div = document.createElement('div');
-div.classList.add('top');
-div.innerHTML = `<span>Top zone</span>`;
-// console.log(header.nextElementSibling);
-
-// fin de la théorie 
-
-/* Menu mobile */
-
+// Menu mobile amélioré
 function menuMobile() {
   const btn = document.querySelector('.burger');
   const header = document.querySelector('.header');
   const links = document.querySelectorAll('.navbar a');
+  const overlay = document.querySelector('.mobile-overlay');
 
-  btn.addEventListener('click', () => {
-    header.classList.toggle('show-nav');
-  });
+  if (btn) {
+    btn.addEventListener('click', () => {
+      header.classList.toggle('show-nav');
+      document.body.classList.toggle('no-scroll');
+    });
+  }
 
   links.forEach(link => {
     link.addEventListener('click', () => {
       header.classList.remove('show-nav');
+      document.body.classList.remove('no-scroll');
+    });
+  });
+
+  if (overlay) {
+    overlay.addEventListener('click', () => {
+      header.classList.remove('show-nav');
+      document.body.classList.remove('no-scroll');
+    });
+  }
+}
+
+// Navigation fluide
+function smoothScroll() {
+  const links = document.querySelectorAll('a[href^="#"]');
+  
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     });
   });
 }
 
-menuMobile();
-
-/* Porfolio */
-
+// Filtres de portfolio améliorés
 function tabsFilters() {
   const tabs = document.querySelectorAll('.portfolio-filters a');
   const projets = document.querySelectorAll('.portfolio .card');
@@ -150,47 +78,35 @@ function tabsFilters() {
   const resetActiveLinks = () => {
     tabs.forEach(elem => {
       elem.classList.remove('active');
-    })
-  }
-
-  const showProjets = (elem) => {
-    console.log(elem);
-    projets.forEach(projet => {
-
-      let filter = projet.getAttribute('data-category');
-
-      if (elem === 'all') {
-        projet.parentNode.classList.remove('hide');
-        return
-      }
-
-      console.log('tutu');
-      // ne sera pas pris en compte !
-      /*if (filter !== elem) {
-        projet.parentNode.classList.add('hide');
-      } else {
-        projet.parentNode.classList.remove('hide');
-      }*/
-
-      // option pour les plus motivés - opérateur ternaire
-      filter !== elem ? projet.parentNode.classList.add('hide') : projet.parentNode.classList.remove('hide');
-
     });
-  }
+  };
+
+  const showProjets = (filter) => {
+    projets.forEach(projet => {
+      const category = projet.getAttribute('data-category');
+      
+      if (filter === 'all' || category === filter) {
+        projet.parentNode.classList.remove('hide');
+        projet.style.animation = 'fadeInUp 0.6s ease forwards';
+      } else {
+        projet.parentNode.classList.add('hide');
+      }
+    });
+  };
 
   tabs.forEach(elem => {
     elem.addEventListener('click', (event) => {
       event.preventDefault();
-      let filter = elem.getAttribute('data-filter');
-      showProjets(filter)
+      const filter = elem.getAttribute('data-filter');
+      
       resetActiveLinks();
       elem.classList.add('active');
+      showProjets(filter);
     });
-  })
+  });
 }
 
-tabsFilters()
-
+// Détails des projets
 function showProjectDetails() {
   const links = document.querySelectorAll('.card__link');
   const modals = document.querySelectorAll('.modal');
@@ -199,72 +115,188 @@ function showProjectDetails() {
   const hideModals = () => {
     modals.forEach(modal => {
       modal.classList.remove('show');
+      document.body.classList.remove('no-scroll');
     });
-  }
+  };
 
   links.forEach(elem => {
     elem.addEventListener('click', (event) => {
       event.preventDefault();
-
-      document.querySelector(`[id=${elem.dataset.id}]`).classList.add('show');
+      const targetModal = document.querySelector(`[id=${elem.dataset.id}]`);
+      
+      if (targetModal) {
+        targetModal.classList.add('show');
+        document.body.classList.add('no-scroll');
+      }
     });
   });
 
   btns.forEach(btn => {
-    btn.addEventListener('click', (event) => {
-      hideModals();
-    });
+    btn.addEventListener('click', hideModals);
   });
 
+  // Fermer avec Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      hideModals();
+    }
+  });
 }
 
-showProjectDetails();
-
-// effets
-
-const observerIntersectionAnimation = () => {
+// Animations d'intersection observer améliorées
+function initIntersectionObserver() {
   const sections = document.querySelectorAll('section');
   const skills = document.querySelectorAll('.skills .bar');
+  const cards = document.querySelectorAll('.card-gradient');
 
-  sections.forEach((section, index) => {
-    if (index === 0) return;
-    section.style.opacity = "0";
-    section.style.transition = "all 1.6s";
-  });
-
-  skills.forEach((elem, index) => {
-
-    elem.style.width = "0";
-    elem.style.transition = "all 1.6s";
-  });
-
-  let sectionObserver = new IntersectionObserver(function (entries, observer) {
+  // Animation des sections
+  const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        let elem = entry.target;
-        elem.style.opacity = 1;
+        entry.target.classList.add('fade-in');
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
       }
     });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
   });
 
   sections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(30px)';
+    section.style.transition = 'all 0.8s ease';
     sectionObserver.observe(section);
   });
 
-  let skillsObserver = new IntersectionObserver(function (entries, observer) {
+  // Animation des compétences
+  const skillsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        let elem = entry.target;
-        elem.style.width = elem.dataset.width + '%';
+        const width = entry.target.dataset.width || '0';
+        entry.target.style.width = width + '%';
+        entry.target.style.transition = 'width 1.2s ease';
       }
     });
+  }, {
+    threshold: 0.5
   });
 
   skills.forEach(skill => {
+    skill.style.width = '0';
     skillsObserver.observe(skill);
+  });
+
+  // Animation des cartes
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('fade-in');
+        }, index * 100);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  cards.forEach(card => {
+    cardObserver.observe(card);
   });
 }
 
-observerIntersectionAnimation();
+// Typing effect pour le titre principal
+function initTypingEffect() {
+  const titleElement = document.querySelector('.hero-title');
+  if (!titleElement) return;
+
+  const text = titleElement.textContent;
+  titleElement.textContent = '';
+  
+  let i = 0;
+  const typeWriter = () => {
+    if (i < text.length) {
+      titleElement.textContent += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 100);
+    }
+  };
+  
+  // Démarrer l'effet quand la section est visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        typeWriter();
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+  
+  observer.observe(titleElement);
+}
+
+// Validation du formulaire
+function initFormValidation() {
+  const form = document.querySelector('form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    const inputs = form.querySelectorAll('input[required], textarea[required]');
+    let isValid = true;
+
+    inputs.forEach(input => {
+      if (!input.value.trim()) {
+        isValid = false;
+        input.classList.add('error');
+      } else {
+        input.classList.remove('error');
+      }
+    });
+
+    if (!isValid) {
+      e.preventDefault();
+      alert('Veuillez remplir tous les champs obligatoires.');
+    }
+  });
+}
+
+// Effet de parallaxe subtil
+function initParallax() {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.parallax');
+    
+    parallaxElements.forEach(element => {
+      const speed = element.dataset.speed || 0.5;
+      element.style.transform = `translateY(${scrolled * speed}px)`;
+    });
+  });
+}
+
+// Initialisation de toutes les fonctionnalités
+document.addEventListener('DOMContentLoaded', () => {
+  initDarkMode();
+  menuMobile();
+  smoothScroll();
+  tabsFilters();
+  showProjectDetails();
+  initIntersectionObserver();
+  initTypingEffect();
+  initFormValidation();
+  initParallax();
+  
+  console.log('Portfolio chargé avec succès !');
+});
+
+// Gestion du redimensionnement de la fenêtre
+window.addEventListener('resize', () => {
+  const header = document.querySelector('.header');
+  if (window.innerWidth > 768) {
+    header.classList.remove('show-nav');
+    document.body.classList.remove('no-scroll');
+  }
+});
 
 

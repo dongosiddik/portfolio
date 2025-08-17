@@ -73,14 +73,21 @@
       <div class="logo font-poppins font-bold text-2xl tracking-tight text-accent dark:text-violet">Sidiki SAWADOGO</div>
       <nav class="hidden md:block">
         <ul class="flex gap-6 font-semibold text-lg">
-          <li><a href="#hero" class="hover:text-accent transition">Accueil</a></li>
-          <li><a href="#about" class="hover:text-accent transition">À propos</a></li>
-          <li><a href="#services" class="hover:text-accent transition">Services</a></li>
-          <li><a href="#skills" class="hover:text-accent transition">Compétences</a></li>
-          <li><a href="#portfolio" class="hover:text-accent transition">Projets</a></li>
-          <li><a href="#contact" class="hover:text-accent transition">Contact</a></li>
+          <li><a href="#hero" class="nav-link hover:text-accent transition">Accueil</a></li>
+          <li><a href="#about" class="nav-link hover:text-accent transition">À propos</a></li>
+          <li><a href="#experience" class="nav-link hover:text-accent transition">Expériences</a></li>
+          <li><a href="#education" class="nav-link hover:text-accent transition">Formations</a></li>
+          <li><a href="#services" class="nav-link hover:text-accent transition">Services</a></li>
+          <li><a href="#skills" class="nav-link hover:text-accent transition">Compétences</a></li>
+          <li><a href="#portfolio" class="nav-link hover:text-accent transition">Projets</a></li>
+          <li><a href="#contact" class="nav-link hover:text-accent transition">Contact</a></li>
         </ul>
       </nav>
+      
+      <!-- Bouton mode sombre -->
+      <button class="dark-mode-toggle hidden md:flex items-center justify-center w-10 h-10 rounded-lg bg-gray-800 dark:bg-gray-200 text-white dark:text-gray-800 hover:bg-gray-700 dark:hover:bg-gray-300 transition-all duration-300 ml-4">
+        <span class="iconify text-xl" data-icon="mdi:weather-night"></span>
+      </button>
       <div class="flex items-center gap-4">
         <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="text-accent dark:text-violet text-2xl focus:outline-none">
           <span id="theme-icon" class="iconify" data-icon="ph:moon-stars-duotone"></span>
@@ -110,6 +117,8 @@
       </button>
       <a href="#hero" class="hover:text-accent transition" onclick="closeMenu()">Accueil</a>
       <a href="#about" class="hover:text-accent transition" onclick="closeMenu()">À propos</a>
+      <a href="#experience" class="hover:text-accent transition" onclick="closeMenu()">Expériences</a>
+      <a href="#education" class="hover:text-accent transition" onclick="closeMenu()">Formations</a>
       <a href="#services" class="hover:text-accent transition" onclick="closeMenu()">Services</a>
       <a href="#skills" class="hover:text-accent transition" onclick="closeMenu()">Compétences</a>
       <a href="#portfolio" class="hover:text-accent transition" onclick="closeMenu()">Projets</a>
@@ -155,7 +164,7 @@
         <h1 class="font-poppins font-bold text-4xl md:text-5xl leading-tight">Bonjour, je suis Sidiki SAWADOGO</h1>
         <h2 class="text-xl md:text-2xl font-semibold text-cyan-400 dark:text-violet-500">Freelance disponible – Projets Web & Data Science</h2>
         <p class="text-lg text-gray-300 dark:text-gray-700 max-w-xl">
-          Développeur web full stack (4 ans d'expérience), spécialisé Laravel, Livewire, PHP, MySQL, JavaScript et Data Science (Python, Pandas, Machine Learning). Diplômé d'un Master en Data Science & Intelligence Artificielle.
+          Développeur web full stack (5 ans d'expérience), spécialisé Laravel, Livewire, PHP, MySQL, JavaScript et Data Science (Python, Pandas, Machine Learning). Diplômé d'un Master en Data Science & Intelligence Artificielle.
         </p>
         <div class="flex gap-4 mt-2">
           <a href="./CV_Sidiki_SAWADOGO_Actualise.pdf" target="_blank" rel="noopener"
@@ -190,23 +199,237 @@
         <h2 class="section-title font-poppins text-3xl font-bold mb-4 text-accent dark:text-violet">À propos</h2>
         <h3 class="text-xl font-semibold mb-4">Qui suis-je ?</h3>
         <p class="mb-6 text-lg text-gray-300 dark:text-gray-700">
-          Développeur web et data scientist basé au Burkina Faso, j'accompagne entreprises et institutions dans la conception de solutions digitales robustes, performantes et innovantes. J'interviens sur toutes les étapes d'un projet, de l'analyse des besoins à la mise en production, avec une forte expertise sur Laravel, Livewire et la data science appliquée.
+          Développeur web full stack et data scientist passionné, je combine expertise technique et vision stratégique pour créer des solutions digitales innovantes. Avec plus de 5 ans d'expérience dans le développement web et la data science, je me spécialise dans la conception d'applications robustes et évolutives utilisant les technologies modernes.
+        </p>
+        <p class="mb-6 text-lg text-gray-300 dark:text-gray-700">
+          Mon approche se base sur une compréhension approfondie des besoins métier, une architecture solide et des bonnes pratiques de développement. Je m'efforce de livrer des solutions qui non seulement répondent aux exigences techniques mais apportent une réelle valeur ajoutée aux utilisateurs finaux.
         </p>
         <div class="flex flex-wrap gap-4 mb-6">
           <span class="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent/10 dark:bg-violet/10 text-accent dark:text-violet font-semibold text-lg">
             🎓 Master Data Science & IA
           </span>
           <span class="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent/10 dark:bg-violet/10 text-accent dark:text-violet font-semibold text-lg">
-            💻 4 ans d'expérience web
+            💻 5+ ans d'expérience web
           </span>
           <span class="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent/10 dark:bg-violet/10 text-accent dark:text-violet font-semibold text-lg">
             ⚡ Expert Laravel, Python, ML
+          </span>
+          <span class="flex items-center gap-2 px-4 py-2 rounded-lg bg-accent/10 dark:bg-violet/10 text-accent dark:text-violet font-semibold text-lg">
+            🌍 Freelance disponible
           </span>
         </div>
         <a href="#portfolio" class="inline-flex items-center px-6 py-3 rounded-full font-semibold text-lg bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow">
           <span class="iconify mr-2 text-2xl" data-icon="mdi:arrow-down-bold-circle-outline"></span>
           Découvrir mes projets
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPÉRIENCES -->
+  <section id="experience" class="py-24 bg-gradient-to-br from-primary via-[#1e293b] to-violet dark:from-white dark:via-gray-100 dark:to-violet-100 fade-in">
+    <div class="container mx-auto px-4">
+      <div class="section-header mb-12 text-center">
+        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Expériences professionnelles</h2>
+        <p class="text-lg text-gray-300 dark:text-gray-700">Mon parcours professionnel dans le développement web et la data science.</p>
+      </div>
+      <div class="max-w-4xl mx-auto space-y-8">
+        <!-- AfricaSys -->
+        <div class="card-gradient rounded-2xl p-8 shadow-xl">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="font-semibold text-xl text-accent dark:text-violet">Développeur Web Full Stack Senior</h3>
+              <p class="text-lg font-medium">AfricaSys</p>
+            </div>
+            <div class="text-right">
+              <span class="badge-gradient px-4 py-2 rounded-full font-semibold">2022 - Présent</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <p class="text-gray-300 dark:text-gray-700 mb-3">
+              Développement de plateformes web robustes et évolutives pour le secteur de la santé publique et l'administration. Gestion complète de projets de bout en bout, de l'analyse des besoins à la mise en production.
+            </p>
+            <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-1">
+              <li>Conception et optimisation des bases de données relationnelles avec SQL avancé</li>
+              <li>Développement de services et APIs pour connecter des systèmes complexes</li>
+              <li>Digitalisation des formulaires de collecte de données et plateformes de collecte de données de santé</li>
+              <li>Développement mobile : projet eUrgence (localisation des accidents)</li>
+              <li>Maintenance, gestion des incidents techniques, et déploiement</li>
+              <li>Collaboration avec des partenaires terrain sur la qualité des données santé</li>
+              <li>Encadrement de stagiaires sur des projets web</li>
+            </ul>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Laravel</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Livewire</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">PHP</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">MySQL</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">SQL Avancé</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">APIs</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Python</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Docker</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Mobile</span>
+          </div>
+        </div>
+
+        <!-- Switch Maker -->
+        <div class="card-gradient rounded-2xl p-8 shadow-xl">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="font-semibold text-xl text-accent dark:text-violet">Développeur Web Full Stack</h3>
+              <p class="text-lg font-medium">Switch Maker</p>
+            </div>
+            <div class="text-right">
+              <span class="badge-gradient px-4 py-2 rounded-full font-semibold">2021</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <p class="text-gray-300 dark:text-gray-700 mb-3">
+              Développement d'applications web pour startups et PME. Participation à des projets innovants dans différents secteurs d'activité.
+            </p>
+            <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-1">
+              <li>Développement d'applications web modernes avec Laravel</li>
+              <li>Intégration d'APIs tierces et développement d'APIs RESTful</li>
+              <li>Mise en place de solutions de paiement et de gestion de contenu</li>
+              <li>Optimisation SEO et amélioration de l'expérience utilisateur</li>
+            </ul>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Laravel</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">API REST</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">MySQL</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Git</span>
+          </div>
+        </div>
+
+        <!-- Ministère de l'Énergie -->
+        <div class="card-gradient rounded-2xl p-8 shadow-xl">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="font-semibold text-xl text-accent dark:text-violet">Stagiaire Développeur</h3>
+              <p class="text-lg font-medium">Ministère de l'Énergie</p>
+            </div>
+            <div class="text-right">
+              <span class="badge-gradient px-4 py-2 rounded-full font-semibold">2019</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <p class="text-gray-300 dark:text-gray-700 mb-3">
+              Stage de fin d'études dans le développement d'applications de gestion administrative et de suivi de projets énergétiques.
+            </p>
+            <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-1">
+              <li>Développement d'un système de gestion de documents administratifs</li>
+              <li>Création de tableaux de bord pour le suivi des projets énergétiques</li>
+              <li>Automatisation de processus de reporting et de génération de rapports</li>
+              <li>Formation des utilisateurs sur les nouvelles applications développées</li>
+            </ul>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">PHP</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">MySQL</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">JavaScript</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMATIONS -->
+  <section id="education" class="py-24 bg-primary dark:bg-white fade-in">
+    <div class="container mx-auto px-4">
+      <div class="section-header mb-12 text-center">
+        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Formations & Certifications</h2>
+        <p class="text-lg text-gray-300 dark:text-gray-700">Mon parcours académique et mes certifications professionnelles.</p>
+      </div>
+      <div class="max-w-4xl mx-auto space-y-8">
+        <!-- Master Data Science -->
+        <div class="card-gradient rounded-2xl p-8 shadow-xl">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="font-semibold text-xl text-accent dark:text-violet">Master 2 en Data Science & Intelligence Artificielle en Santé</h3>
+              <p class="text-lg font-medium">Université Virtuelle du Burkina Faso</p>
+            </div>
+            <div class="text-right">
+              <span class="badge-gradient px-4 py-2 rounded-full font-semibold">2024</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <p class="text-gray-300 dark:text-gray-700 mb-3">
+              Formation spécialisée en data science appliquée au secteur de la santé, couvrant l'analyse de données médicales, le machine learning et l'intelligence artificielle.
+            </p>
+            <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-1">
+              <li>Machine Learning et Deep Learning pour la santé</li>
+              <li>Analyse de données médicales et épidémiologiques</li>
+              <li>Intelligence artificielle et systèmes d'aide à la décision</li>
+              <li>Éthique et réglementation en IA médicale</li>
+            </ul>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Python</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Machine Learning</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Deep Learning</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">TensorFlow</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Pandas</span>
+          </div>
+        </div>
+
+        <!-- Licence Génie Logiciel -->
+        <div class="card-gradient rounded-2xl p-8 shadow-xl">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 class="font-semibold text-xl text-accent dark:text-violet">Licence en Génie Logiciel</h3>
+              <p class="text-lg font-medium">Université Aube Nouvelle</p>
+            </div>
+            <div class="text-right">
+              <span class="badge-gradient px-4 py-2 rounded-full font-semibold">2019</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <p class="text-gray-300 dark:text-gray-700 mb-3">
+              Formation complète en génie logiciel couvrant les fondamentaux du développement, les architectures logicielles et les méthodologies de développement.
+            </p>
+            <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-1">
+              <li>Architecture logicielle et patterns de conception</li>
+              <li>Développement web et bases de données</li>
+              <li>Méthodologies agiles et gestion de projet</li>
+              <li>Tests et qualité logicielle</li>
+            </ul>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Java</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">PHP</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">MySQL</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">UML</span>
+            <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Git</span>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="card-gradient rounded-2xl p-8 shadow-xl">
+          <div class="mb-4">
+            <h3 class="font-semibold text-xl text-accent dark:text-violet mb-4">Certifications professionnelles</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-accent/10 dark:bg-violet/10 rounded-lg p-4">
+                <h4 class="font-semibold text-accent dark:text-violet mb-2">IBM - Python for Data Science, AI & Development</h4>
+                <p class="text-sm text-gray-300 dark:text-gray-700 mb-2">Formation complète sur Python, Pandas, Numpy, Matplotlib et structuration de projets data science</p>
+                <a href="https://lnkd.in/eWRTp9kn" target="_blank" rel="noopener" class="text-accent dark:text-violet text-xs hover:underline">Vérifier le certificat →</a>
+              </div>
+              <div class="bg-accent/10 dark:bg-violet/10 rounded-lg p-4">
+                <h4 class="font-semibold text-accent dark:text-violet mb-2">Cybersécurité - Bases fondamentales</h4>
+                <p class="text-sm text-gray-300 dark:text-gray-700">Formation sur les principes de base de la cybersécurité et bonnes pratiques</p>
+              </div>
+              <div class="bg-accent/10 dark:bg-violet/10 rounded-lg p-4">
+                <h4 class="font-semibold text-accent dark:text-violet mb-2">Laravel - Framework PHP</h4>
+                <p class="text-sm text-gray-300 dark:text-gray-700">Expertise avancée en développement Laravel et écosystème PHP</p>
+              </div>
+              <div class="bg-accent/10 dark:bg-violet/10 rounded-lg p-4">
+                <h4 class="font-semibold text-accent dark:text-violet mb-2">Git & GitHub - Gestion de versions</h4>
+                <p class="text-sm text-gray-300 dark:text-gray-700">Maîtrise des outils de contrôle de version et collaboration</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -222,22 +445,22 @@
         <div class="card-gradient rounded-2xl p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
           <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:web"></span>
           <h3 class="font-semibold text-xl mb-2">Développement Web & API</h3>
-          <p class="text-gray-300 dark:text-gray-700">Applications web robustes, performantes et évolutives (Laravel, Livewire, PHP, JS, MySQL).</p>
+          <p class="text-gray-300 dark:text-gray-700">Applications web robustes, performantes et évolutives. Développement d'APIs RESTful, intégration de services tiers et optimisation des performances.</p>
         </div>
         <div class="card-gradient rounded-2xl p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
           <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:chart-line"></span>
           <h3 class="font-semibold text-xl mb-2">Data Science & Automatisation</h3>
-          <p class="text-gray-300 dark:text-gray-700">Analyse de données, automatisation de tâches, reporting avancé (Python, Pandas, ML).</p>
+          <p class="text-gray-300 dark:text-gray-700">Analyse de données, machine learning, automatisation de processus et reporting avancé. Solutions d'intelligence artificielle sur mesure.</p>
         </div>
         <div class="card-gradient rounded-2xl p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
           <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:account-cog"></span>
           <h3 class="font-semibold text-xl mb-2">Gestion de projet digital</h3>
-          <p class="text-gray-300 dark:text-gray-700">Accompagnement de A à Z, méthodes agiles, documentation et suivi qualité.</p>
+          <p class="text-gray-300 dark:text-gray-700">Accompagnement de A à Z, méthodes agiles, architecture technique, documentation et suivi qualité. Gestion d'équipes techniques.</p>
         </div>
         <div class="card-gradient rounded-2xl p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
           <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:teach"></span>
           <h3 class="font-semibold text-xl mb-2">Formation & Coaching</h3>
-          <p class="text-gray-300 dark:text-gray-700">Montée en compétences sur Laravel, Livewire, Python, bonnes pratiques web et data.</p>
+          <p class="text-gray-300 dark:text-gray-700">Montée en compétences sur Laravel, Livewire, Python, bonnes pratiques web et data science. Formation d'équipes techniques.</p>
         </div>
       </div>
     </div>
@@ -264,10 +487,22 @@
               <span class="iconify text-xl" data-icon="mdi:database"></span> MySQL
             </span>
             <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+              <span class="iconify text-xl" data-icon="mdi:database-search"></span> SQL Avancé
+            </span>
+            <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
               <span class="iconify text-xl" data-icon="mdi:language-javascript"></span> JavaScript
             </span>
             <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
-              <span class="iconify text-xl" data-icon="mdi:tailwind"></span> Tailwind
+              <span class="iconify text-xl" data-icon="mdi:tailwind"></span> Tailwind CSS
+            </span>
+            <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+              <span class="iconify text-xl" data-icon="mdi:api"></span> API REST
+            </span>
+            <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+              <span class="iconify text-xl" data-icon="mdi:postgresql"></span> PostgreSQL
+            </span>
+            <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+              <span class="iconify text-xl" data-icon="mdi:redis"></span> Redis
             </span>
           </div>
           <div class="mb-6">
@@ -295,13 +530,19 @@
           </div>
         </div>
         <div class="flex-1">
-          <h3 class="font-semibold text-xl mb-4">Data Science</h3>
+          <h3 class="font-semibold text-xl mb-4">Data Science & DevOps</h3>
           <div class="flex flex-wrap gap-4 mb-6">
             <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
               <span class="iconify text-xl" data-icon="mdi:language-python"></span> Python
             </span>
             <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
               <span class="iconify text-xl" data-icon="mdi:database-outline"></span> Pandas
+            </span>
+            <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+              <span class="iconify text-xl" data-icon="mdi:chart-line"></span> Numpy
+            </span>
+            <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+              <span class="iconify text-xl" data-icon="mdi:chart-bar"></span> Matplotlib
             </span>
             <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
               <span class="iconify text-xl" data-icon="mdi:robot"></span> Machine Learning
@@ -311,6 +552,15 @@
             </span>
             <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
               <span class="iconify text-xl" data-icon="mdi:git"></span> Git
+            </span>
+            <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+              <span class="iconify text-xl" data-icon="mdi:linux"></span> Linux
+            </span>
+            <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+              <span class="iconify text-xl" data-icon="mdi:apache"></span> Apache
+            </span>
+            <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
+              <span class="iconify text-xl" data-icon="mdi:shield-check"></span> Cybersécurité
             </span>
           </div>
           <div class="mb-6">
@@ -322,18 +572,52 @@
               <div class="bg-accent h-3 rounded-full" style="width:90%"></div>
             </div>
             <div class="flex items-center justify-between mb-1">
-              <span class="font-semibold">Pandas</span>
+              <span class="font-semibold">Machine Learning</span>
               <span class="text-accent font-bold">85%</span>
             </div>
             <div class="w-full bg-gray-700 rounded-full h-3 mb-4">
               <div class="bg-accent h-3 rounded-full" style="width:85%"></div>
             </div>
             <div class="flex items-center justify-between mb-1">
-              <span class="font-semibold">Machine Learning</span>
+              <span class="font-semibold">Docker</span>
               <span class="text-accent font-bold">80%</span>
             </div>
             <div class="w-full bg-gray-700 rounded-full h-3 mb-4">
               <div class="bg-accent h-3 rounded-full" style="width:80%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Outils et méthodologies -->
+      <div class="mt-12">
+        <h3 class="font-semibold text-xl mb-6 text-center">Outils & Méthodologies</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card-gradient rounded-xl p-6">
+            <h4 class="font-semibold text-lg mb-4 text-accent dark:text-violet">Outils de développement</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">VS Code</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">PhpStorm</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Postman</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Jupyter</span>
+            </div>
+          </div>
+          <div class="card-gradient rounded-xl p-6">
+            <h4 class="font-semibold text-lg mb-4 text-accent dark:text-violet">Méthodologies</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Agile</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Scrum</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">CI/CD</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">DevOps</span>
+            </div>
+          </div>
+          <div class="card-gradient rounded-xl p-6">
+            <h4 class="font-semibold text-lg mb-4 text-accent dark:text-violet">Automatisation</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">n8n</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Cron</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Webhooks</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">APIs</span>
             </div>
           </div>
         </div>
@@ -351,7 +635,6 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         <!-- SDPlanner -->
         <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
-          <img src="./img/sdplanner.jpg" alt="SDPlanner" class="portfolio-img w-full h-48">
           <div class="p-6 flex flex-col flex-1">
             <div class="flex gap-2 mb-2">
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
@@ -360,7 +643,7 @@
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Livewire</span>
             </div>
             <h3 class="font-semibold text-xl mb-2">SDPlanner</h3>
-            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Plateforme de planification et suivi de projets de santé publique. Gestion multi-utilisateurs, reporting dynamique, sécurité avancée.</p>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Plateforme de planification et suivi de projets de santé publique. Gestion multi-utilisateurs, reporting dynamique, sécurité avancée et intégration de données épidémiologiques.</p>
             <a href="https://sdplanner.africasys.com/home" target="_blank" rel="noopener"
               class="inline-flex items-center px-4 py-2 rounded-full font-semibold bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow self-start">
               <span class="iconify mr-2 text-xl" data-icon="mdi:open-in-new"></span>
@@ -370,7 +653,6 @@
         </div>
         <!-- VaxBudget -->
         <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
-          <img src="./img/vaxbudget.jpg" alt="VaxBudget" class="portfolio-img w-full h-48">
           <div class="p-6 flex flex-col flex-1">
             <div class="flex gap-2 mb-2">
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
@@ -380,7 +662,7 @@
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Python</span>
             </div>
             <h3 class="font-semibold text-xl mb-2">VaxBudget</h3>
-            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Application de gestion budgétaire pour la vaccination. Tableaux de bord, analyses automatisées, génération de rapports PDF.</p>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Application de gestion budgétaire pour la vaccination. Tableaux de bord interactifs, analyses automatisées, génération de rapports PDF et intégration de données en temps réel.</p>
             <a href="https://vaxbudget.cloudlyyours.com/fr/dashboard" target="_blank" rel="noopener"
               class="inline-flex items-center px-4 py-2 rounded-full font-semibold bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow self-start">
               <span class="iconify mr-2 text-xl" data-icon="mdi:open-in-new"></span>
@@ -390,7 +672,6 @@
         </div>
         <!-- Dafani -->
         <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
-          <img src="./img/dafani.jpg" alt="Dafani" class="portfolio-img w-full h-48">
           <div class="p-6 flex flex-col flex-1">
             <div class="flex gap-2 mb-2">
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
@@ -399,7 +680,7 @@
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Livewire</span>
             </div>
             <h3 class="font-semibold text-xl mb-2">Dafani</h3>
-            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Plateforme de gestion administrative et financière pour associations. Automatisation des tâches, gestion des membres et des finances.</p>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Plateforme de gestion administrative et financière pour associations. Automatisation des tâches, gestion des membres, finances et génération de rapports automatisés.</p>
             <a href="https://dafani.africasys.com/dashboard" target="_blank" rel="noopener"
               class="inline-flex items-center px-4 py-2 rounded-full font-semibold bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow self-start">
               <span class="iconify mr-2 text-xl" data-icon="mdi:open-in-new"></span>
@@ -409,7 +690,6 @@
         </div>
         <!-- DocSecure -->
         <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
-          <img src="./img/docsecure.jpg" alt="DocSecure" class="portfolio-img w-full h-48">
           <div class="p-6 flex flex-col flex-1">
             <div class="flex gap-2 mb-2">
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
@@ -420,12 +700,11 @@
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">QR Code</span>
             </div>
             <h3 class="font-semibold text-xl mb-2">DocSecure</h3>
-            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Solution de gestion et sécurisation de documents officiels avec génération de QR Code et export PDF. <em>Démo privée</em></p>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Solution de gestion et sécurisation de documents officiels avec génération de QR Code, export PDF et système de vérification d'authenticité en temps réel.</p>
           </div>
         </div>
         <!-- eTimbre -->
         <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
-          <img src="./img/etimbre.jpg" alt="eTimbre" class="portfolio-img w-full h-48">
           <div class="p-6 flex flex-col flex-1">
             <div class="flex gap-2 mb-2">
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
@@ -434,7 +713,72 @@
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Livewire</span>
             </div>
             <h3 class="font-semibold text-xl mb-2">eTimbre</h3>
-            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Application de gestion et génération de timbres électroniques pour l'administration publique. <em>Démo privée</em></p>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Application de gestion et génération de timbres électroniques pour l'administration publique. Système de paiement intégré et suivi des transactions.</p>
+          </div>
+        </div>
+        <!-- BabaliTrac -->
+        <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex gap-2 mb-2">
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">2023</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Laravel</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Livewire</span>
+            </div>
+            <h3 class="font-semibold text-xl mb-2">BabaliTrac</h3>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Système de suivi et de traçabilité pour la chaîne d'approvisionnement. Interface mobile responsive, géolocalisation et notifications en temps réel.</p>
+          </div>
+        </div>
+        <!-- Système de collecte santé -->
+        <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex gap-2 mb-2">
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">2023</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Laravel</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Livewire</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">API</span>
+            </div>
+            <h3 class="font-semibold text-xl mb-2">Système de collecte santé</h3>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Plateforme de collecte et d'analyse de données sanitaires. API REST, validation automatique des données et génération de rapports épidémiologiques.</p>
+          </div>
+        </div>
+        <!-- Gestion immobilière -->
+        <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex gap-2 mb-2">
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">2022</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Laravel</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Livewire</span>
+            </div>
+            <h3 class="font-semibold text-xl mb-2">Gestion immobilière</h3>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Application de gestion immobilière complète. Gestion des biens, locations, paiements en ligne et tableau de bord analytique pour investisseurs.</p>
+          </div>
+        </div>
+        <!-- Automatisation n8n -->
+        <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
+          <div class="p-6 flex flex-col flex-1">
+            <div class="flex gap-2 mb-2">
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Remote</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">2024</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">n8n</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">OpenAI API</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">RAG</span>
+            </div>
+            <h3 class="font-semibold text-xl mb-2">Automatisation des Workflows IT et Métier</h3>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Système complet d'automatisation avec n8n : alertes techniques en temps réel (Cloudflare, Dynatrace), suivi médical patients, génération de contenu LinkedIn avec IA (RAG), et routage intelligent des notifications.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">IMAP Triggers</span>
+              <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Webhooks</span>
+              <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">LinkedIn API</span>
+              <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Email Automation</span>
+            </div>
+            <a href="#automation-details" onclick="showAutomationDetails()" 
+              class="inline-flex items-center px-4 py-2 rounded-full font-semibold bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow self-start">
+              <span class="iconify mr-2 text-xl" data-icon="mdi:information-outline"></span>
+              Voir les détails
+            </a>
           </div>
         </div>
       </div>
@@ -448,7 +792,7 @@
         <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Contact</h2>
         <p class="text-lg text-gray-300 dark:text-gray-700">Un projet, une question ou envie de collaborer ? Écrivez-moi ! <span class="ml-2 text-accent dark:text-violet font-semibold">Réponse sous 24h.</span></p>
       </div>
-      <form action="https://formsubmit.co/sidiki.sawadogo@email.com" method="POST" class="max-w-xl mx-auto bg-[#1e293b] dark:bg-gray-100 rounded-2xl p-8 shadow-xl flex flex-col gap-6">
+      <form action="https://formsubmit.co/dogosidik@gmail.com" method="POST" class="max-w-xl mx-auto bg-[#1e293b] dark:bg-gray-100 rounded-2xl p-8 shadow-xl flex flex-col gap-6">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_next" value="https://dgeo-dev.github.io/formation-youtube-html-cs-js/thanks.html">
@@ -466,13 +810,31 @@
         </label>
         <div class="flex gap-4 items-center">
           <input type="submit" class="btn btn-accent inline-flex items-center px-6 py-3 rounded-full font-semibold text-lg bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow cursor-pointer" value="Envoyer">
-          <a href="https://wa.me/226XXXXXXXXX" target="_blank" rel="noopener"
+          <a href="https://wa.me/22666585601" target="_blank" rel="noopener"
             class="inline-flex items-center px-6 py-3 rounded-full font-semibold text-lg bg-green-500 hover:bg-green-600 text-white shadow-glow-cyan transition glow">
             <span class="iconify mr-2 text-2xl" data-icon="mdi:whatsapp"></span>
             WhatsApp
           </a>
         </div>
       </form>
+      
+      <!-- Informations de contact -->
+      <div class="max-w-2xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="text-center">
+          <div class="bg-accent/10 dark:bg-violet/10 rounded-xl p-6">
+            <span class="iconify text-4xl text-accent dark:text-violet mb-4" data-icon="mdi:email"></span>
+            <h3 class="font-semibold text-lg mb-2">Email</h3>
+            <p class="text-gray-300 dark:text-gray-700">dogosidik@gmail.com</p>
+          </div>
+        </div>
+        <div class="text-center">
+          <div class="bg-accent/10 dark:bg-violet/10 rounded-xl p-6">
+            <span class="iconify text-4xl text-accent dark:text-violet mb-4" data-icon="mdi:phone"></span>
+            <h3 class="font-semibold text-lg mb-2">Téléphone</h3>
+            <p class="text-gray-300 dark:text-gray-700">+226 66585601</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -495,3 +857,167 @@
       <div class="text-gray-400 dark:text-gray-600 text-sm">© 2025 Sidiki SAWADOGO. Tous droits réservés.</div>
     </div>
   </footer>
+
+  <!-- Modale détails automatisation n8n -->
+  <div id="automation-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden">
+    <div class="min-h-screen flex items-center justify-center p-4">
+      <div class="bg-primary dark:bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-8">
+          <!-- Header -->
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <h2 class="text-2xl font-bold text-accent dark:text-violet mb-2">Automatisation des Workflows IT et Métier</h2>
+              <p class="text-gray-300 dark:text-gray-700">Système complet d'automatisation avec n8n</p>
+            </div>
+            <button onclick="closeAutomationModal()" class="text-2xl text-gray-400 hover:text-white dark:hover:text-primary transition">
+              ✕
+            </button>
+          </div>
+
+          <!-- Objectif -->
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-accent dark:text-violet mb-4">🎯 Objectif</h3>
+            <p class="text-gray-300 dark:text-gray-700 mb-4">
+              Mettre en place des automatisations robustes avec n8n pour gérer les alertes techniques en temps réel, traiter les notifications emails avec décisions intelligentes automatisées, superviser les workflows métiers et générer du contenu LinkedIn automatiquement avec IA (RAG).
+            </p>
+          </div>
+
+          <!-- Cas d'usage -->
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-accent dark:text-violet mb-4">🔄 Cas d'usages automatisés</h3>
+            
+            <div class="space-y-6">
+              <!-- Infrastructure & Alertes -->
+              <div class="card-gradient rounded-xl p-6">
+                <h4 class="font-semibold text-lg text-accent dark:text-violet mb-3">🛠️ Infrastructure & Alertes</h4>
+                <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-2">
+                  <li>Déclenchement automatique par email (IMAP)</li>
+                  <li>Récupération des devices et scripts</li>
+                  <li>Décision conditionnelle (script actif/inactif)</li>
+                  <li>Lancement, suivi et notification des scripts</li>
+                  <li>Nettoyage des alertes & envoi de confirmation</li>
+                </ul>
+              </div>
+
+              <!-- Suivi médical -->
+              <div class="card-gradient rounded-xl p-6">
+                <h4 class="font-semibold text-lg text-accent dark:text-violet mb-3">🧬 Suivi médical patients (Health Workflow)</h4>
+                <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-2">
+                  <li>Formulaires patients & uploads de documents médicaux</li>
+                  <li>Création automatique de dossiers et relances email</li>
+                  <li>Condition d'attente et étapes validées</li>
+                </ul>
+              </div>
+
+              <!-- Création de contenu LinkedIn -->
+              <div class="card-gradient rounded-xl p-6">
+                <h4 class="font-semibold text-lg text-accent dark:text-violet mb-3">📝 Création de contenu LinkedIn avec IA (Agent RAG)</h4>
+                <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-2">
+                  <li>Génération de posts à partir de documents</li>
+                  <li>Sélection de thèmes aléatoires</li>
+                  <li>Validation humaine via email</li>
+                  <li>Publication automatisée sur LinkedIn</li>
+                </ul>
+              </div>
+
+              <!-- Watchdog Cloudflare & Dynatrace -->
+              <div class="card-gradient rounded-xl p-6">
+                <h4 class="font-semibold text-lg text-accent dark:text-violet mb-3">📧 Watchdog Cloudflare & Dynatrace</h4>
+                <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-2">
+                  <li>Vérification en temps réel des incidents</li>
+                  <li>Routage intelligent vers l'équipe technique concernée</li>
+                  <li>Envoi automatique de mails formatés selon la source</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stack technique -->
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-accent dark:text-violet mb-4">🧰 Stack utilisée</h3>
+            <div class="flex flex-wrap gap-3">
+              <span class="badge-gradient px-4 py-2 rounded-lg font-semibold">n8n (self-hosted)</span>
+              <span class="badge-gradient px-4 py-2 rounded-lg font-semibold">OpenAI API (LLM Assistant)</span>
+              <span class="badge-gradient px-4 py-2 rounded-lg font-semibold">Dropbox</span>
+              <span class="badge-gradient px-4 py-2 rounded-lg font-semibold">Email (IMAP/SMTP)</span>
+              <span class="badge-gradient px-4 py-2 rounded-lg font-semibold">Webhooks</span>
+              <span class="badge-gradient px-4 py-2 rounded-lg font-semibold">GitHub</span>
+              <span class="badge-gradient px-4 py-2 rounded-lg font-semibold">API</span>
+            </div>
+          </div>
+
+          <!-- Résultats -->
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-accent dark:text-violet mb-4">🔎 Résultats</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="card-gradient rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-accent dark:text-violet mb-2">90%</div>
+                <p class="text-gray-300 dark:text-gray-700">Réduction du traitement manuel des alertes techniques</p>
+              </div>
+              <div class="card-gradient rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-accent dark:text-violet mb-2">100%</div>
+                <p class="text-gray-300 dark:text-gray-700">Fiabilisation du suivi patient et automatisation des rappels</p>
+              </div>
+              <div class="card-gradient rounded-xl p-4 text-center">
+                <div class="text-2xl font-bold text-accent dark:text-violet mb-2">3x</div>
+                <p class="text-gray-300 dark:text-gray-700">Création de contenu LinkedIn plus rapide et personnalisée</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technologies maîtrisées -->
+          <div class="mb-8">
+            <h3 class="text-xl font-semibold text-accent dark:text-violet mb-4">📂 Technologies maîtrisées</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">n8n</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">automatisation workflow</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">IMAP triggers</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">API OpenAI</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Webhooks</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Code JS</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">RAG</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">email automation</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">routing alerts</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">data pipeline</span>
+              <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">LinkedIn automation</span>
+            </div>
+          </div>
+
+          <!-- Bouton fermer -->
+          <div class="text-center">
+            <button onclick="closeAutomationModal()" class="inline-flex items-center px-6 py-3 rounded-full font-semibold text-lg bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow">
+              <span class="iconify mr-2 text-xl" data-icon="mdi:close"></span>
+              Fermer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Fonctions pour la modale d'automatisation
+    function showAutomationDetails() {
+      document.getElementById('automation-modal').classList.remove('hidden');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeAutomationModal() {
+      document.getElementById('automation-modal').classList.add('hidden');
+      document.body.classList.remove('no-scroll');
+    }
+
+    // Fermer la modale avec Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAutomationModal();
+      }
+    });
+
+    // Fermer la modale en cliquant à l'extérieur
+    document.getElementById('automation-modal').addEventListener('click', (e) => {
+      if (e.target.id === 'automation-modal') {
+        closeAutomationModal();
+      }
+    });
+  </script>
