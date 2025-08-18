@@ -275,6 +275,127 @@ function initParallax() {
   });
 }
 
+// Système de traduction simple
+let currentLanguage = 'fr';
+
+function toggleLanguage() {
+  currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
+  
+  // Mettre à jour le bouton
+  const langText = document.getElementById('lang-text');
+  if (langText) {
+    langText.textContent = currentLanguage === 'fr' ? 'EN' : 'FR';
+  }
+  
+  // Traductions sécurisées - seulement les éléments spécifiques
+  const translations = {
+    fr: {
+      'nav-home': 'Accueil',
+      'nav-about': 'À propos', 
+      'nav-experience': 'Expériences',
+      'nav-education': 'Formations',
+      'nav-services': 'Services',
+      'nav-skills': 'Compétences',
+      'nav-portfolio': 'Projets',
+      'nav-contact': 'Contact',
+      'hero-title': 'Bonjour, je suis Sidiki SAWADOGO',
+      'hero-subtitle': 'Freelance disponible – Projets Web & Data Science',
+      'btn-cv': 'Télécharger mon CV',
+      'btn-portfolio': 'Voir mon portfolio',
+      'section-about': 'À propos',
+      'about-subtitle': 'Qui suis-je ?',
+      'btn-discover': 'Découvrir mes projets',
+      'section-experience': 'Expériences professionnelles',
+      'experience-desc': 'Mon parcours professionnel dans le développement web et la data science.',
+      'section-education': 'Formations & Certifications',
+      'education-desc': 'Mon parcours académique et mes certifications professionnelles.',
+      'section-services': 'Mes services',
+      'services-desc': 'Solutions complètes pour vos projets web et data science.',
+      'section-skills': 'Mes compétences',
+      'skills-desc': 'Un savoir-faire complet en développement web, data science et gestion de projet.',
+      'section-portfolio': 'Projets récents',
+      'portfolio-desc': 'Découvrez mes dernières réalisations en développement web et data science.',
+      'section-contact': 'Contact',
+      'contact-desc': 'Discutons de votre projet ensemble.',
+      'btn-details': 'Détails',
+      'about-p1': 'Développeur web full stack et data scientist passionné, je combine expertise technique et vision stratégique pour créer des solutions digitales innovantes. Avec plus de 5 ans d\'expérience dans le développement web et la data science, je me spécialise dans la conception d\'applications robustes et évolutives utilisant les technologies modernes.',
+      'about-p2': 'Expert en automatisation des workflows avec n8n et spécialiste de la digitalisation des formulaires avec SurveyJS, je transforme les processus métier complexes en solutions automatisées intelligentes. Mon approche se base sur une compréhension approfondie des besoins métier, une architecture solide et des bonnes pratiques de développement.',
+      'about-p3': 'Je m\'efforce de livrer des solutions qui non seulement répondent aux exigences techniques mais apportent une réelle valeur ajoutée aux utilisateurs finaux, en privilégiant l\'automatisation intelligente et la digitalisation des processus traditionnels.',
+      'job-title-1': 'Développeur Web Full Stack Senior',
+      'job-title-2': 'Développeur Web Full Stack',
+      'job-title-3': 'Stagiaire Développeur',
+      'education-title-1': 'Master 2 en Data Science & Intelligence Artificielle en Santé',
+      'education-title-2': 'Licence en Génie Logiciel',
+      'education-title-3': 'Certifications professionnelles',
+      'skills-web': 'Développement web',
+      'skills-data': 'Data Science & IA',
+      'skills-tools': 'Outils & DevOps'
+    },
+    en: {
+      'nav-home': 'Home',
+      'nav-about': 'About',
+      'nav-experience': 'Experience', 
+      'nav-education': 'Education',
+      'nav-services': 'Services',
+      'nav-skills': 'Skills',
+      'nav-portfolio': 'Projects',
+      'nav-contact': 'Contact',
+      'hero-title': 'Hello, I\'m Sidiki SAWADOGO',
+      'hero-subtitle': 'Available Freelancer – Web & Data Science Projects',
+      'btn-cv': 'Download my CV',
+      'btn-portfolio': 'View Portfolio',
+      'section-about': 'About',
+      'about-subtitle': 'Who am I?',
+      'btn-discover': 'Discover my projects',
+      'section-experience': 'Professional Experience',
+      'experience-desc': 'My professional journey in web development and data science.',
+      'section-education': 'Education & Certifications',
+      'education-desc': 'My academic background and professional certifications.',
+      'section-services': 'My Services',
+      'services-desc': 'Complete solutions for your web and data science projects.',
+      'section-skills': 'My Skills',
+      'skills-desc': 'Complete expertise in web development, data science and project management.',
+      'section-portfolio': 'Recent Projects',
+      'portfolio-desc': 'Discover my latest achievements in web development and data science.',
+      'section-contact': 'Contact',
+      'contact-desc': 'Let\'s discuss your project together.',
+      'btn-details': 'Details',
+      'about-p1': 'Passionate full stack web developer and data scientist, I combine technical expertise and strategic vision to create innovative digital solutions. With over 5 years of experience in web development and data science, I specialize in designing robust and scalable applications using modern technologies.',
+      'about-p2': 'Expert in workflow automation with n8n and specialist in form digitalization with SurveyJS, I transform complex business processes into intelligent automated solutions. My approach is based on a deep understanding of business needs, solid architecture and development best practices.',
+      'about-p3': 'I strive to deliver solutions that not only meet technical requirements but bring real added value to end users, prioritizing intelligent automation and digitalization of traditional processes.',
+      'job-title-1': 'Senior Full Stack Web Developer',
+      'job-title-2': 'Full Stack Web Developer',
+      'job-title-3': 'Developer Intern',
+      'education-title-1': 'Master 2 in Data Science & Artificial Intelligence in Health',
+      'education-title-2': 'Bachelor in Software Engineering',
+      'education-title-3': 'Professional Certifications',
+      'skills-web': 'Web Development',
+      'skills-data': 'Data Science & AI',
+      'skills-tools': 'Tools & DevOps'
+    }
+  };
+  
+  // Appliquer les traductions par ID
+  Object.keys(translations[currentLanguage]).forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.textContent = translations[currentLanguage][id];
+    }
+  });
+  
+  // Sauvegarder la préférence
+  localStorage.setItem('language', currentLanguage);
+}
+
+// Initialiser la langue au chargement
+function initLanguage() {
+  const savedLanguage = localStorage.getItem('language');
+  if (savedLanguage && savedLanguage !== 'fr') {
+    currentLanguage = 'fr';
+    toggleLanguage();
+  }
+}
+
 // Fonctions pour les modales
 function openDocSecureModal() {
   document.getElementById('docsecure-modal').classList.remove('hidden');
@@ -339,6 +460,7 @@ function closeCollecteModal() {
 // Initialisation de toutes les fonctionnalités
 document.addEventListener('DOMContentLoaded', () => {
   initDarkMode();
+  initLanguage();
   menuMobile();
   smoothScroll();
   tabsFilters();

@@ -78,14 +78,14 @@
       </div>
       <nav class="hidden md:block">
         <ul class="flex gap-6 font-semibold text-lg">
-          <li><a href="#hero" class="nav-link hover:text-accent transition">Accueil</a></li>
-          <li><a href="#about" class="nav-link hover:text-accent transition">À propos</a></li>
-          <li><a href="#experience" class="nav-link hover:text-accent transition">Expériences</a></li>
-          <li><a href="#education" class="nav-link hover:text-accent transition">Formations</a></li>
-          <li><a href="#services" class="nav-link hover:text-accent transition">Services</a></li>
-          <li><a href="#skills" class="nav-link hover:text-accent transition">Compétences</a></li>
-          <li><a href="#portfolio" class="nav-link hover:text-accent transition">Projets</a></li>
-          <li><a href="#contact" class="nav-link hover:text-accent transition">Contact</a></li>
+          <li><a href="#hero" class="nav-link hover:text-accent transition" id="nav-home">Accueil</a></li>
+          <li><a href="#about" class="nav-link hover:text-accent transition" id="nav-about">À propos</a></li>
+          <li><a href="#experience" class="nav-link hover:text-accent transition" id="nav-experience">Expériences</a></li>
+          <li><a href="#education" class="nav-link hover:text-accent transition" id="nav-education">Formations</a></li>
+          <li><a href="#services" class="nav-link hover:text-accent transition" id="nav-services">Services</a></li>
+          <li><a href="#skills" class="nav-link hover:text-accent transition" id="nav-skills">Compétences</a></li>
+          <li><a href="#portfolio" class="nav-link hover:text-accent transition" id="nav-portfolio">Projets</a></li>
+          <li><a href="#contact" class="nav-link hover:text-accent transition" id="nav-contact">Contact</a></li>
         </ul>
       </nav>
       
@@ -94,6 +94,12 @@
         <span class="iconify text-xl" data-icon="mdi:weather-night"></span>
       </button>
       <div class="flex items-center gap-4">
+        <!-- Bouton de traduction -->
+        <button onclick="toggleLanguage()" aria-label="Toggle language" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-accent/10 dark:bg-violet/10 text-accent dark:text-violet hover:bg-accent/20 dark:hover:bg-violet/20 transition-all duration-300 font-semibold text-sm">
+          <span class="iconify" data-icon="mdi:translate"></span>
+          <span id="lang-text">EN</span>
+        </button>
+        
         <button onclick="toggleTheme()" aria-label="Toggle dark mode" class="text-accent dark:text-violet text-2xl focus:outline-none">
           <span id="theme-icon" class="iconify" data-icon="ph:moon-stars-duotone"></span>
         </button>
@@ -155,6 +161,7 @@
       });
     </script>
     <script src="https://code.iconify.design/3/3.1.1/iconify.min.js"></script>
+    <script src="./js/global.js"></script>
   </header>
 
   <!-- HERO -->
@@ -166,20 +173,20 @@
     <div class="container relative z-10 flex flex-col md:flex-row items-center gap-10 py-20 fade-in">
       <div class="flex-1 flex flex-col items-start gap-6">
         <span class="text-accent dark:text-violet font-semibold text-lg tracking-wide uppercase">Développeur Web & Data Science</span>
-        <h1 class="font-poppins font-bold text-4xl md:text-5xl leading-tight">Bonjour, je suis Sidiki SAWADOGO</h1>
-        <h2 class="text-xl md:text-2xl font-semibold text-cyan-400 dark:text-violet-500">Freelance disponible – Projets Web & Data Science</h2>
-        <p class="text-lg text-gray-300 dark:text-gray-700 max-w-xl">
+        <h1 class="font-poppins font-bold text-4xl md:text-5xl leading-tight" id="hero-title">Bonjour, je suis Sidiki SAWADOGO</h1>
+        <h2 class="text-xl md:text-2xl font-semibold text-cyan-400 dark:text-violet-500" id="hero-subtitle">Freelance disponible – Projets Web & Data Science</h2>
+        <p class="text-lg text-gray-300 dark:text-gray-700 max-w-xl" data-fr="Développeur web full stack (5 ans d'expérience), spécialisé Laravel, Livewire, PHP, MySQL, JavaScript et Data Science (Python, Pandas, Machine Learning). Diplômé d'un Master en Data Science & Intelligence Artificielle." data-en="Full stack web developer (5 years experience), specialized in Laravel, Livewire, PHP, MySQL, JavaScript and Data Science (Python, Pandas, Machine Learning). Master's degree in Data Science & Artificial Intelligence.">
           Développeur web full stack (5 ans d'expérience), spécialisé Laravel, Livewire, PHP, MySQL, JavaScript et Data Science (Python, Pandas, Machine Learning). Diplômé d'un Master en Data Science & Intelligence Artificielle.
         </p>
         <div class="flex gap-4 mt-2">
           <a href="./CV_Sidiki_SAWADOGO_Actualise.pdf" target="_blank" rel="noopener"
             class="inline-flex items-center px-6 py-3 rounded-full font-semibold text-lg bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow">
             <span class="iconify mr-2 text-2xl" data-icon="mdi:download"></span>
-            Télécharger mon CV
+            <span id="btn-cv">Télécharger mon CV</span>
           </a>
           <a href="#portfolio" class="inline-flex items-center px-6 py-3 rounded-full font-semibold text-lg bg-violet hover:bg-accent text-white shadow-glow-violet hover:shadow-glow-cyan transition glow">
-            <span class="iconify mr-2 text-2xl" data-icon="mdi:briefcase-outline"></span>
-            En savoir plus
+            <span class="iconify mr-2 text-2xl" data-icon="mdi:eye"></span>
+            <span id="btn-portfolio">Voir mon portfolio</span>
           </a>
         </div>
       </div>
@@ -201,15 +208,15 @@
           class="rounded-2xl shadow-xl border-4 border-accent/30 dark:border-violet/30 object-cover w-80 h-64">
       </div>
       <div class="flex-1">
-        <h2 class="section-title font-poppins text-3xl font-bold mb-4 text-accent dark:text-violet">À propos</h2>
-        <h3 class="text-xl font-semibold mb-4">Qui suis-je ?</h3>
-        <p class="mb-6 text-lg text-gray-300 dark:text-gray-700">
+        <h2 class="section-title font-poppins text-3xl font-bold mb-4 text-accent dark:text-violet" id="section-about">À propos</h2>
+        <h3 class="text-xl font-semibold mb-4" id="about-subtitle">Qui suis-je ?</h3>
+        <p class="mb-6 text-lg text-gray-300 dark:text-gray-700" id="about-p1">
           Développeur web full stack et data scientist passionné, je combine expertise technique et vision stratégique pour créer des solutions digitales innovantes. Avec plus de 5 ans d'expérience dans le développement web et la data science, je me spécialise dans la conception d'applications robustes et évolutives utilisant les technologies modernes.
         </p>
-        <p class="mb-6 text-lg text-gray-300 dark:text-gray-700">
+        <p class="mb-6 text-lg text-gray-300 dark:text-gray-700" id="about-p2">
           Expert en automatisation des workflows avec n8n et spécialiste de la digitalisation des formulaires avec SurveyJS, je transforme les processus métier complexes en solutions automatisées intelligentes. Mon approche se base sur une compréhension approfondie des besoins métier, une architecture solide et des bonnes pratiques de développement.
         </p>
-        <p class="mb-6 text-lg text-gray-300 dark:text-gray-700">
+        <p class="mb-6 text-lg text-gray-300 dark:text-gray-700" id="about-p3">
           Je m'efforce de livrer des solutions qui non seulement répondent aux exigences techniques mais apportent une réelle valeur ajoutée aux utilisateurs finaux, en privilégiant l'automatisation intelligente et la digitalisation des processus traditionnels.
         </p>
         <div class="flex flex-wrap gap-4 mb-6">
@@ -234,7 +241,7 @@
         </div>
         <a href="#portfolio" class="inline-flex items-center px-6 py-3 rounded-full font-semibold text-lg bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow">
           <span class="iconify mr-2 text-2xl" data-icon="mdi:arrow-down-bold-circle-outline"></span>
-          Découvrir mes projets
+          <span id="btn-discover">Découvrir mes projets</span>
         </a>
       </div>
     </div>
@@ -244,15 +251,15 @@
   <section id="experience" class="py-24 bg-gradient-to-br from-primary via-[#1e293b] to-violet dark:from-white dark:via-gray-100 dark:to-violet-100 fade-in">
     <div class="container mx-auto px-4">
       <div class="section-header mb-12 text-center">
-        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Expériences professionnelles</h2>
-        <p class="text-lg text-gray-300 dark:text-gray-700">Mon parcours professionnel dans le développement web et la data science.</p>
+        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2" id="section-experience">Expériences professionnelles</h2>
+        <p class="text-lg text-gray-300 dark:text-gray-700" id="experience-desc">Mon parcours professionnel dans le développement web et la data science.</p>
       </div>
       <div class="max-w-4xl mx-auto space-y-8">
         <!-- AfricaSys -->
         <div class="card-gradient rounded-2xl p-8 shadow-xl">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
             <div>
-              <h3 class="font-semibold text-xl text-accent dark:text-violet">Développeur Web Full Stack Senior</h3>
+              <h3 class="font-semibold text-xl text-accent dark:text-violet" id="job-title-1">Développeur Web Full Stack Senior</h3>
               <p class="text-lg font-medium">AfricaSys</p>
             </div>
             <div class="text-right">
@@ -290,7 +297,7 @@
         <div class="card-gradient rounded-2xl p-8 shadow-xl">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
             <div>
-              <h3 class="font-semibold text-xl text-accent dark:text-violet">Développeur Web Full Stack</h3>
+              <h3 class="font-semibold text-xl text-accent dark:text-violet" id="job-title-2">Développeur Web Full Stack</h3>
               <p class="text-lg font-medium">Switch Maker</p>
             </div>
             <div class="text-right">
@@ -320,7 +327,7 @@
         <div class="card-gradient rounded-2xl p-8 shadow-xl">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
             <div>
-              <h3 class="font-semibold text-xl text-accent dark:text-violet">Stagiaire Développeur</h3>
+              <h3 class="font-semibold text-xl text-accent dark:text-violet" id="job-title-3">Stagiaire Développeur</h3>
               <p class="text-lg font-medium">Ministère de l'Énergie</p>
             </div>
             <div class="text-right">
@@ -353,15 +360,15 @@
   <section id="education" class="py-24 bg-primary dark:bg-white fade-in">
     <div class="container mx-auto px-4">
       <div class="section-header mb-12 text-center">
-        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Formations & Certifications</h2>
-        <p class="text-lg text-gray-300 dark:text-gray-700">Mon parcours académique et mes certifications professionnelles.</p>
+        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2" id="section-education">Formations & Certifications</h2>
+        <p class="text-lg text-gray-300 dark:text-gray-700" id="education-desc">Mon parcours académique et mes certifications professionnelles.</p>
       </div>
       <div class="max-w-4xl mx-auto space-y-8">
         <!-- Master Data Science -->
         <div class="card-gradient rounded-2xl p-8 shadow-xl">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
             <div>
-              <h3 class="font-semibold text-xl text-accent dark:text-violet">Master 2 en Data Science & Intelligence Artificielle en Santé</h3>
+              <h3 class="font-semibold text-xl text-accent dark:text-violet" id="education-title-1">Master 2 en Data Science & Intelligence Artificielle en Santé</h3>
               <p class="text-lg font-medium">Université Virtuelle du Burkina Faso</p>
             </div>
             <div class="text-right">
@@ -369,7 +376,7 @@
             </div>
           </div>
           <div class="mb-4">
-            <p class="text-gray-300 dark:text-gray-700 mb-3">
+            <p class="text-gray-300 dark:text-gray-700 mb-3" id="education-desc-1">
               Formation spécialisée en data science appliquée au secteur de la santé, couvrant l'analyse de données médicales, le machine learning et l'intelligence artificielle.
             </p>
             <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-1">
@@ -392,7 +399,7 @@
         <div class="card-gradient rounded-2xl p-8 shadow-xl">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
             <div>
-              <h3 class="font-semibold text-xl text-accent dark:text-violet">Licence en Génie Logiciel</h3>
+              <h3 class="font-semibold text-xl text-accent dark:text-violet" id="education-title-2">Licence en Génie Logiciel</h3>
               <p class="text-lg font-medium">Université Aube Nouvelle</p>
             </div>
             <div class="text-right">
@@ -400,14 +407,14 @@
             </div>
           </div>
           <div class="mb-4">
-            <p class="text-gray-300 dark:text-gray-700 mb-3">
+            <p class="text-gray-300 dark:text-gray-700 mb-3" id="education-desc-2">
               Formation complète en génie logiciel couvrant les fondamentaux du développement, les architectures logicielles et les méthodologies de développement.
             </p>
             <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-1">
-              <li>Architecture logicielle et patterns de conception</li>
-              <li>Développement web et bases de données</li>
-              <li>Méthodologies agiles et gestion de projet</li>
-              <li>Tests et qualité logicielle</li>
+              <li id="education-li-1">Architecture logicielle et patterns de conception</li>
+              <li id="education-li-2">Développement web et bases de données</li>
+              <li id="education-li-3">Méthodologies agiles et gestion de projet</li>
+              <li id="education-li-4">Tests et qualité logicielle</li>
             </ul>
           </div>
           <div class="flex flex-wrap gap-2">
@@ -422,7 +429,7 @@
         <!-- Certifications -->
         <div class="card-gradient rounded-2xl p-8 shadow-xl">
           <div class="mb-4">
-            <h3 class="font-semibold text-xl text-accent dark:text-violet mb-4">Certifications professionnelles</h3>
+            <h3 class="font-semibold text-xl text-accent dark:text-violet" id="education-title-3">Certifications professionnelles</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div class="bg-accent/10 dark:bg-violet/10 rounded-lg p-4">
                 <h4 class="font-semibold text-accent dark:text-violet mb-2">IBM - Python for Data Science, AI & Development</h4>
@@ -452,29 +459,37 @@
   <section id="services" class="py-24 bg-gradient-to-br from-primary via-[#1e293b] to-violet dark:from-white dark:via-gray-100 dark:to-violet-100 fade-in">
     <div class="container mx-auto px-4">
       <div class="section-header mb-12 text-center">
-        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Mes services</h2>
-        <p class="text-lg text-gray-300 dark:text-gray-700">Développement web sur-mesure, automatisation, analyse de données, accompagnement digital et formation technique.</p>
+        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2" id="section-services">Mes services</h2>
+        <p class="text-lg text-gray-300 dark:text-gray-700" id="services-desc">Solutions complètes pour vos projets web et data science.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-        <div class="card-gradient rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
-          <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:web"></span>
-          <h3 class="font-semibold text-xl mb-2">Développement Web & API</h3>
-          <p class="text-gray-300 dark:text-gray-700">Applications web robustes, performantes et évolutives. Développement d'APIs RESTful, intégration de services tiers et optimisation des performances.</p>
+        <div class="card-gradient rounded-xl p-6">
+          <div class="text-center mb-4">
+            <span class="iconify text-4xl text-accent dark:text-violet mb-2" data-icon="mdi:code-tags"></span>
+          </div>
+          <h3 class="font-semibold text-xl text-center mb-4" id="service-title-1">Développement Web & API</h3>
+          <p class="text-gray-300 dark:text-gray-700 text-center mb-4" id="service-desc-1">Applications web robustes, performantes et évolutives. Développement d'APIs RESTful, intégration de services tiers et optimisation des performances.</p>
         </div>
-        <div class="card-gradient rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
-          <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:chart-line"></span>
-          <h3 class="font-semibold text-xl mb-2">Data Science & Automatisation</h3>
-          <p class="text-gray-300 dark:text-gray-700">Analyse de données, machine learning, automatisation de processus et reporting avancé. Solutions d'intelligence artificielle sur mesure.</p>
+        <div class="card-gradient rounded-xl p-6">
+          <div class="text-center mb-4">
+            <span class="iconify text-4xl text-accent dark:text-violet mb-2" data-icon="mdi:chart-line"></span>
+          </div>
+          <h3 class="font-semibold text-xl text-center mb-4" id="service-title-2">Data Science & Automatisation</h3>
+          <p class="text-gray-300 dark:text-gray-700 text-center mb-4" id="service-desc-2">Analyse de données, machine learning, automatisation de workflows avec n8n. Transformation de données complexes en insights exploitables.</p>
         </div>
-        <div class="card-gradient rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
-          <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:account-cog"></span>
-          <h3 class="font-semibold text-xl mb-2">Gestion de projet digital</h3>
-          <p class="text-gray-300 dark:text-gray-700">Accompagnement de A à Z, méthodes agiles, architecture technique, documentation et suivi qualité. Gestion d'équipes techniques.</p>
+        <div class="card-gradient rounded-xl p-6">
+          <div class="text-center mb-4">
+            <span class="iconify text-4xl text-accent dark:text-violet mb-2" data-icon="mdi:account-group"></span>
+          </div>
+          <h3 class="font-semibold text-xl text-center mb-4" id="service-title-3">Gestion de Projet & Accompagnement</h3>
+          <p class="text-gray-300 dark:text-gray-700 text-center mb-4" id="service-desc-3">Accompagnement de A à Z, méthodes agiles, architecture technique, documentation et suivi qualité. Gestion d'équipes techniques.</p>
         </div>
-        <div class="card-gradient rounded-2xl p-4 sm:p-6 md:p-8 flex flex-col items-center text-center shadow-xl hover:scale-105 hover:shadow-glow-cyan transition group">
-          <span class="iconify text-4xl mb-4 text-accent group-hover:text-violet" data-icon="mdi:teach"></span>
-          <h3 class="font-semibold text-xl mb-2">Formation & Coaching</h3>
-          <p class="text-gray-300 dark:text-gray-700">Montée en compétences sur Laravel, Livewire, Python, bonnes pratiques web et data science. Formation d'équipes techniques.</p>
+        <div class="card-gradient rounded-xl p-6">
+          <div class="text-center mb-4">
+            <span class="iconify text-4xl text-accent dark:text-violet mb-2" data-icon="mdi:school"></span>
+          </div>
+          <h3 class="font-semibold text-xl text-center mb-4" id="service-title-4">Formation & Coaching</h3>
+          <p class="text-gray-300 dark:text-gray-700 text-center mb-4" id="service-desc-4">Montée en compétences sur Laravel, Livewire, Python, bonnes pratiques web et data science. Formation d'équipes techniques.</p>
         </div>
       </div>
     </div>
@@ -484,12 +499,12 @@
   <section id="skills" class="py-24 bg-primary dark:bg-white fade-in">
     <div class="container mx-auto px-4">
       <div class="section-header mb-12 text-center">
-        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Mes compétences</h2>
-        <p class="text-lg text-gray-300 dark:text-gray-700">Un savoir-faire complet en développement web, data science et gestion de projet.</p>
+        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2" id="section-skills">Mes compétences</h2>
+        <p class="text-lg text-gray-300 dark:text-gray-700" id="skills-desc">Un savoir-faire complet en développement web, data science et gestion de projet.</p>
       </div>
       <div class="flex flex-col md:flex-row gap-12">
         <div class="flex-1">
-          <h3 class="font-semibold text-xl mb-4">Développement web</h3>
+          <h3 class="font-semibold text-xl mb-4" id="skills-web">Développement web</h3>
           <div class="flex flex-wrap gap-4 mb-6">
             <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
               <span class="iconify text-xl" data-icon="mdi:laravel"></span> Laravel
@@ -547,7 +562,7 @@
           </div>
         </div>
         <div class="flex-1">
-          <h3 class="font-semibold text-xl mb-4">Data Science & DevOps</h3>
+          <h3 class="font-semibold text-xl mb-4" id="skills-data">Data Science & IA</h3>
           <div class="flex flex-wrap gap-4 mb-6">
             <span class="badge-gradient px-4 py-2 rounded-lg font-semibold flex items-center gap-2">
               <span class="iconify text-xl" data-icon="mdi:language-python"></span> Python
@@ -608,7 +623,7 @@
       
       <!-- Outils et méthodologies -->
       <div class="mt-12">
-        <h3 class="font-semibold text-xl mb-6 text-center">Outils & Méthodologies</h3>
+        <h3 class="font-semibold text-xl mb-6 text-center" id="skills-tools">Outils & Méthodologies</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div class="card-gradient rounded-xl p-6">
             <h4 class="font-semibold text-lg mb-4 text-accent dark:text-violet">Outils de développement</h4>
@@ -647,13 +662,13 @@
   <section id="portfolio" class="py-24 bg-gradient-to-br from-primary via-[#1e293b] to-violet dark:from-white dark:via-gray-100 dark:to-violet-100 fade-in">
     <div class="container mx-auto px-4">
       <div class="section-header mb-12 text-center">
-        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Projets récents</h2>
-        <p class="text-lg text-gray-300 dark:text-gray-700">Quelques réalisations marquantes en développement web et data science.</p>
+        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2" id="section-portfolio">Projets récents</h2>
+        <p class="text-lg text-gray-300 dark:text-gray-700" id="portfolio-desc">Découvrez mes dernières réalisations en développement web et data science.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 auto-rows-fr">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
         <!-- SDPlanner -->
-        <div class="rounded-2xl card-gradient shadow-xl flex flex-col overflow-hidden min-h-[400px]">
-          <div class="p-6 flex flex-col h-full">
+        <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
+          <div class="p-6 flex flex-col flex-1">
             <div class="flex gap-2 mb-2">
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">2022</span>
@@ -662,15 +677,20 @@
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Dashboard</span>
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Remote</span>
             </div>
-            <h3 class="font-semibold text-xl mb-2">SDPlanner - Santé Diabète Planner</h3>
-            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Système complet de planification et gestion de programmes de santé publique. Gestion des programmes, activités, rappels, génération de documents et suivi multi-pays avec interface moderne.</p>
+            <h3 class="font-semibold text-xl mb-2" id="project-title-1">SDPlanner - Santé Diabète Planner</h3>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1" id="project-desc-1">Système complet de planification et gestion de programmes de santé publique. Gestion des programmes, activités, rappels, génération de documents et suivi multi-pays avec interface moderne.</p>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Programmes</span>
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Activités</span>
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Rappels</span>
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Documents</span>
             </div>
-            <div class="flex flex-wrap gap-2 mt-auto">
+            <div class="flex flex-wrap gap-2">
+              <a href="https://sdplanner.africasys.com/home" target="_blank" rel="noopener"
+                class="inline-flex items-center px-4 py-2 rounded-full font-semibold bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow">
+                <span class="iconify mr-2 text-xl" data-icon="mdi:open-in-new"></span>
+                Voir le projet
+              </a>
               <a href="#sdplanner-details" onclick="showSDPlannerDetails()" 
                 class="inline-flex items-center px-4 py-2 rounded-full font-semibold bg-gray-600 hover:bg-gray-700 text-white transition">
                 <span class="iconify mr-2 text-xl" data-icon="mdi:information-outline"></span>
@@ -680,8 +700,8 @@
           </div>
         </div>
         <!-- VaxBudget -->
-        <div class="rounded-2xl card-gradient shadow-xl flex flex-col overflow-hidden min-h-[400px]">
-          <div class="p-6 flex flex-col h-full">
+        <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
+          <div class="p-6 flex flex-col flex-1">
             <div class="flex gap-2 mb-2">
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Haïti</span>
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">2024</span>
@@ -698,7 +718,12 @@
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Analyses avancées</span>
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Travail à distance</span>
             </div>
-            <div class="flex flex-wrap gap-2 mt-auto">
+            <div class="flex flex-wrap gap-2">
+              <a href="https://vaxbudget.cloudlyyours.com/fr/dashboard" target="_blank" rel="noopener"
+                class="inline-flex items-center px-4 py-2 rounded-full font-semibold bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow">
+                <span class="iconify mr-2 text-xl" data-icon="mdi:open-in-new"></span>
+                Voir le projet
+              </a>
               <a href="#vaxbudget-details" onclick="showVaxBudgetDetails()" 
                 class="inline-flex items-center px-4 py-2 rounded-full font-semibold bg-gray-600 hover:bg-gray-700 text-white transition">
                 <span class="iconify mr-2 text-xl" data-icon="mdi:information-outline"></span>
@@ -708,8 +733,8 @@
           </div>
         </div>
         <!-- Dafani/BabaliTrac -->
-        <div class="rounded-2xl card-gradient shadow-xl flex flex-col overflow-hidden min-h-[400px]">
-          <div class="p-6 flex flex-col h-full">
+        <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
+          <div class="p-6 flex flex-col flex-1">
             <div class="flex gap-2 mb-2">
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">2024-2025</span>
@@ -727,7 +752,7 @@
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Coût Production</span>
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Finances</span>
             </div>
-            <div class="flex flex-wrap gap-2 mt-auto">
+            <div class="flex flex-wrap gap-2">
               <a href="https://dafani.africasys.com/dashboard" target="_blank" rel="noopener"
                 class="inline-flex items-center px-4 py-2 rounded-full font-semibold bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow">
                 <span class="iconify mr-2 text-xl" data-icon="mdi:open-in-new"></span>
@@ -747,8 +772,8 @@
           </div>
         </div>
         <!-- DocSecure -->
-        <div class="rounded-2xl card-gradient shadow-xl flex flex-col overflow-hidden min-h-[400px]">
-          <div class="p-6 flex flex-col h-full">
+        <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
+          <div class="p-6 flex flex-col flex-1">
             <div class="flex gap-2 mb-2">
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Afrique</span>
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">2025</span>
@@ -757,15 +782,15 @@
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">QR Code</span>
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">SHA-256</span>
             </div>
-            <h3 class="font-semibold text-xl mb-2">DocSecure - Plateforme de Génération & Vérification de Documents</h3>
-            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1">Plateforme moderne de génération, gestion et vérification de documents personnalisés pour administrations, universités et banques en Afrique. Génération depuis Excel/Word, QR codes de vérification, hash SHA-256 et authentification 2FA.</p>
+            <h3 class="font-semibold text-xl mb-2" id="project-title-2">DocSecure - Plateforme de Génération & Vérification de Documents</h3>
+            <p class="text-gray-300 dark:text-gray-700 mb-4 flex-1" id="project-desc-2">Plateforme moderne de génération, gestion et vérification de documents personnalisés pour administrations, universités et banques en Afrique. Génération depuis Excel/Word, QR codes de vérification, hash SHA-256 et authentification 2FA.</p>
             <div class="flex flex-wrap gap-2 mb-4">
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Génération en lot</span>
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Templates dynamiques</span>
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Multi-entreprises</span>
               <span class="badge-gradient px-2 py-1 rounded-full text-xs font-bold">Audit complet</span>
             </div>
-            <div class="flex flex-wrap gap-2 mt-auto">
+            <div class="flex flex-wrap gap-2">
               <a href="#docsecure-details" onclick="showDocSecureDetails()" 
                 class="inline-flex items-center px-4 py-2 rounded-full font-semibold bg-accent hover:bg-violet text-primary dark:text-white shadow-glow-cyan hover:shadow-glow-violet transition glow">
                 <span class="iconify mr-2 text-xl" data-icon="mdi:information-outline"></span>
@@ -775,8 +800,8 @@
           </div>
         </div>
         <!-- eTimbre -->
-        <div class="rounded-2xl card-gradient shadow-xl flex flex-col overflow-hidden min-h-[400px]">
-          <div class="p-6 flex flex-col h-full">
+        <div class="rounded-2xl card-gradient shadow-xl flex flex-col h-full overflow-hidden">
+          <div class="p-6 flex flex-col flex-1">
             <div class="flex gap-2 mb-2">
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">Burkina Faso</span>
               <span class="badge-gradient px-3 py-1 rounded-full text-xs font-bold">2024</span>
@@ -863,8 +888,8 @@
   <section id="contact" class="py-24 bg-primary dark:bg-white fade-in">
     <div class="container mx-auto px-4">
       <div class="section-header mb-12 text-center">
-        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2">Contact</h2>
-        <p class="text-lg text-gray-300 dark:text-gray-700">Un projet, une question ou envie de collaborer ? Écrivez-moi ! <span class="ml-2 text-accent dark:text-violet font-semibold">Réponse sous 24h.</span></p>
+        <h2 class="section-title font-poppins text-3xl font-bold text-accent dark:text-violet mb-2" id="section-contact">Contact</h2>
+        <p class="text-lg text-gray-300 dark:text-gray-700" id="contact-desc">Discutons de votre projet ensemble.</p>
       </div>
       <form action="https://formsubmit.co/dogosidik@gmail.com" method="POST" class="max-w-xl mx-auto bg-[#1e293b] dark:bg-gray-100 rounded-2xl p-8 shadow-xl flex flex-col gap-6">
         <input type="hidden" name="_captcha" value="false">
@@ -1184,16 +1209,11 @@
                   <li>Nettoyage des alertes & envoi de confirmation</li>
                 </ul>
               </div>
-
               <!-- Suivi médical -->
               <div class="card-gradient rounded-xl p-6">
-                <h4 class="font-semibold text-lg text-accent dark:text-violet mb-3">🧬 Suivi médical patients (Health Workflow)</h4>
+                <h4 class="font-semibold text-lg text-accent dark:text-violet mb-3" id="project-title-3">🧬 Suivi médical patients (Health Workflow)</h4>
                 <ul class="list-disc list-inside text-gray-300 dark:text-gray-700 space-y-2">
-                  <li>Formulaires patients & uploads de documents médicaux</li>
-                  <li>Création automatique de dossiers et relances email</li>
-                  <li>Condition d'attente et étapes validées</li>
-                </ul>
-              </div>
+                  <li id="project-desc-3">Application de suivi médical pour patients avec gestion des rendez-vous, historique médical et notifications automatiques.</li>
 
               <!-- Création de contenu LinkedIn -->
               <div class="card-gradient rounded-xl p-6">
